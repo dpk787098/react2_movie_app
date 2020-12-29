@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Card from './Card/Card';
+import loader from './assets/preloader.gif';
 
 class App  extends Component {
   constructor(props) {
@@ -20,7 +21,13 @@ class App  extends Component {
   render() { 
     return ( 
       <div className="movie_page">
-        <h3 className="title">Movies</h3>
+        {
+          this.state.loading ?
+            <img className="loader_icon" alt="loder icon" src={loader} /> 
+            : 
+            <h3 className="title">Movies</h3>
+        }
+        
         <div className="cards_wrapper">
           {
             this.state.movieData.map((data, index) => 
