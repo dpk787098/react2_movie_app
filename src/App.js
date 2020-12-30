@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.module.css';
 import Card from './Card/Card';
 import loader from './assets/preloader.gif';
 
@@ -20,15 +20,15 @@ class App  extends Component {
 
   render() { 
     return ( 
-      <div className="movie_page">
+      <div className={classes.movie_page}>
         {
           this.state.loading ?
-            <img className="loader_icon" alt="loder icon" src={loader} /> 
+            <img className={classes.loader_icon} alt="loder icon" src={loader} /> 
             : 
-            <h3 className="title">Movies</h3>
+            <h3 className={classes.title}>Movies</h3>
         }
         
-        <div className="cards_wrapper">
+        <div className={classes.cards_wrapper}>
           {
             this.state.movieData.map((data, index) => 
               <Card data={data} key={index} />

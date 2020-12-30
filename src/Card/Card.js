@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Card.css';
+import classes from './Card.module.css';
 
 
 class Card extends Component {
@@ -9,11 +9,10 @@ class Card extends Component {
     }
     render() { 
         return ( 
-            <div className="card_wrapper">
+            <div className={classes.card_wrapper}>
                 <img src={this.props.data.Poster} alt={this.props.data.Title} />
-                {console.log(this.props.data)}
-                <div className="name_wrapper">
-                    <div class="movie_name">
+                <div className={classes.name_wrapper}>
+                    <div className={classes.movie_name}>
                         {this.props.data.Title}
                     </div>
                 </div>
